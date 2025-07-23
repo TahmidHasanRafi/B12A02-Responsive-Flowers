@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flower Shop</title>
     <style>
-        /* General Body Styles */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -16,7 +15,7 @@
             line-height: 1.6;
         }
 
-        /* Reusable Components */
+
         .section-header {
             text-align: center;
             margin-bottom: 40px;
@@ -30,7 +29,7 @@
 
         .section-header .highlight {
             color: #ff6347;
-            /* Example highlight color */
+
         }
 
         .section-header p {
@@ -40,7 +39,7 @@
             margin: 0 auto;
         }
 
-        /* 1. Navbar */
+
         body {
             margin: 0;
             font-family: Arial, sans-serif;
@@ -55,7 +54,7 @@
             background-color: #f7f9ff;
         }
 
-        /* Left - Logo */
+
         .logo {
             display: flex;
             align-items: center;
@@ -84,7 +83,6 @@
             letter-spacing: 2px;
         }
 
-        /* Center - Nav links */
         .nav-container {
             display: flex;
             align-items: center;
@@ -122,7 +120,7 @@
             color: black;
         }
 
-        /* Right - Cart */
+
         .cart {
             display: flex;
             align-items: right;
@@ -140,7 +138,7 @@
         }
 
 
-        /* 2. Banner */
+
         .banner {
             display: flex;
             align-items: center;
@@ -179,7 +177,6 @@
 
 
 
-        /* 3. Plants Section */
         .plants-section {
             padding: 80px 50px;
             background-color: #fff;
@@ -209,9 +206,9 @@
         .plant-card img {
             max-width: 100%;
             height: 200px;
-            /* Fixed height for consistency */
+
             object-fit: contain;
-            /* Ensures the entire image is visible */
+
             margin-bottom: 15px;
         }
 
@@ -245,7 +242,6 @@
 
 
 
-        /* 4. Plants Lover Section */
         .plants-lover-section {
             display: flex;
             align-items: flex-start;
@@ -269,7 +265,7 @@
             margin-top: -30px
         }
 
-        /* Final badge positioning and appearance */
+
         .trusted-badge {
             position: absolute;
             top: -100px;
@@ -320,7 +316,6 @@
 
 
 
-        /* Latest Deal Section */
         .latest-deals-section {
             padding: 80px 50px;
             background-color: #f7f9fc;
@@ -431,10 +426,10 @@
 
 
 
-        /* 5. Join Section */
+
         .join-section {
             background-image: url('assets/news-letter-bg.png');
-            /* Replace with your image */
+
             background-size: cover;
             background-position: center;
             padding: 100px 50px;
@@ -483,7 +478,7 @@
 
 
 
-        /* 6. Footer Section */
+
         .footer {
             display: flex;
             justify-content: space-between;
@@ -554,10 +549,10 @@
 
         @media (max-width: 768px) {
 
-            /* 1. Navbar */
+
             .nav-links {
                 display: none;
-                /* Hide nav links */
+
             }
 
             .nav-container {
@@ -568,7 +563,7 @@
                 margin-left: auto;
             }
 
-            /* 2. Banner Section - image first, then content */
+
             .banner {
                 flex-direction: column;
                 text-align: center;
@@ -583,13 +578,12 @@
                 font-size: 2em;
             }
 
-            /* 3. Plant Section - 2 columns */
+
             .plants-grid {
                 grid-template-columns: repeat(2, 1fr);
                 padding: 0 10px;
             }
 
-            /* 4. Plants Lover Section - image top, hide badge */
             .plants-lover-section {
                 flex-direction: column;
                 align-items: center;
@@ -616,7 +610,6 @@
                 text-align: center;
             }
 
-            /* 5. Deal Section - one card per row, stacked */
             .deals-wrapper {
                 flex-direction: column;
                 gap: 20px;
@@ -634,7 +627,6 @@
                 height: auto;
             }
 
-            /* 6. Join Section - no change (same for PC and mobile) */
             .join-section {
                 padding: 60px 20px;
             }
@@ -653,7 +645,6 @@
                 width: 100%;
             }
 
-            /* 7. Footer Section - stacked layout */
             .footer {
                 flex-direction: column;
                 align-items: center;
@@ -683,7 +674,7 @@
 <body>
 
     <nav class="navbar">
-        <!-- Logo -->
+
         <div class="logo">
             <img src="assets/logo.png" alt="Logo">
             <div class="text">
@@ -692,7 +683,6 @@
             </div>
         </div>
 
-        <!-- Center Navigation -->
         <div class="nav-container">
 
 
@@ -704,7 +694,7 @@
                 </div>
             </div>
 
-            <!-- Cart -->
+
             <div class="cart">
                 <svg class="cart-icon" fill="none" stroke="black" stroke-width="2" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -790,7 +780,7 @@
         <div class="plants-lover-image-container">
             <img src="assets/flower-store.png" alt="Flower & Plants Lover" class="plants-lover-image">
 
-            <!-- Badge moved here to overlay the top-center -->
+
             <div class="trusted-badge">
                 <img src="assets/trusted-badge.png" alt="Trusted Badge">
             </div>
