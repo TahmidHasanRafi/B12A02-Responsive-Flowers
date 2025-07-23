@@ -139,12 +139,6 @@
             font-weight: 500;
         }
 
-        /* Responsive - Mobile */
-        @media screen and (max-width: 768px) {
-            .nav-right {
-                display: none;
-            }
-        }
 
         /* 2. Banner */
         .banner {
@@ -182,33 +176,7 @@
             border-radius: 10px;
         }
 
-        /* Mobile Responsiveness for Banner */
-        @media (max-width: 768px) {
-            .banner {
-                flex-direction: column;
-                padding: 40px 20px;
-                text-align: center;
-            }
 
-            .banner-image {
-                order: -1;
-                /* Image moves to the top */
-                margin-bottom: 30px;
-            }
-
-            .banner-content {
-                text-align: left;
-                /* Content left aligned */
-            }
-
-            .banner-content h1 {
-                font-size: 2.5em;
-            }
-
-            .banner-content p {
-                font-size: 1em;
-            }
-        }
 
 
         /* 3. Plants Section */
@@ -275,25 +243,6 @@
             background-color: #e0523a;
         }
 
-        /* Mobile Responsiveness for Plants Section */
-        @media (max-width: 768px) {
-            .plants-section {
-                padding: 40px 20px;
-            }
-
-            .plants-grid {
-                grid-template-columns: repeat(2, 1fr);
-                /* 2 columns on mobile */
-                gap: 20px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .plants-grid {
-                grid-template-columns: 1fr;
-                /* 1 column on very small screens */
-            }
-        }
 
 
         /* 4. Plants Lover Section */
@@ -369,30 +318,6 @@
             top: 0;
         }
 
-        /* Mobile Responsiveness for Plants Lover Section */
-        @media (max-width: 768px) {
-            .plants-lover-section {
-                flex-direction: column;
-                padding: 40px 20px;
-                text-align: center;
-            }
-
-            .plants-lover-image-container {
-                order: -1;
-                /* Image moves to the top */
-                margin-bottom: 30px;
-            }
-
-            .plants-lover-content {
-                text-align: left;
-                /* Content left aligned */
-            }
-
-            .trusted-badge {
-                display: none;
-                /* Hide badge on mobile */
-            }
-        }
 
 
         /* Latest Deal Section */
@@ -503,29 +428,7 @@
         }
 
 
-        /* Mobile Responsiveness for Latest Deal Section */
-        @media (max-width: 768px) {
-            .latest-deals-section {
-                padding: 40px 20px;
-            }
 
-            .deals-grid {
-                flex-direction: column;
-                /* Stack cards vertically */
-                align-items: center;
-                /* Center them */
-            }
-
-            .deal-card.small-card,
-            .deal-card.large-card {
-                width: 100%;
-                /* Full width on mobile */
-                max-width: 350px;
-                /* Limit max width for better appearance */
-                height: 250px;
-                /* Adjust height for all cards */
-            }
-        }
 
 
         /* 5. Join Section */
@@ -577,28 +480,7 @@
             background-color: #e0523a;
         }
 
-        /* Mobile Responsiveness for Join Section */
-        @media (max-width: 768px) {
-            .join-section {
-                padding: 60px 20px;
-            }
 
-            .join-section h2 {
-                font-size: 2em;
-            }
-
-            .join-form {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .join-form input,
-            .join-form button {
-                width: 100%;
-                box-sizing: border-box;
-                /* Include padding in width */
-            }
-        }
 
 
         /* 6. Footer Section */
@@ -670,32 +552,129 @@
             transform: scale(1.1);
         }
 
-        /* Mobile Responsiveness for Footer */
         @media (max-width: 768px) {
+
+            /* 1. Navbar */
+            .nav-links {
+                display: none;
+                /* Hide nav links */
+            }
+
+            .nav-container {
+                justify-content: space-between;
+            }
+
+            .cart {
+                margin-left: auto;
+            }
+
+            /* 2. Banner Section - image first, then content */
+            .banner {
+                flex-direction: column;
+                text-align: center;
+                padding: 40px 20px;
+            }
+
+            .banner-image {
+                order: -1;
+            }
+
+            .banner-content h1 {
+                font-size: 2em;
+            }
+
+            /* 3. Plant Section - 2 columns */
+            .plants-grid {
+                grid-template-columns: repeat(2, 1fr);
+                padding: 0 10px;
+            }
+
+            /* 4. Plants Lover Section - image top, hide badge */
+            .plants-lover-section {
+                flex-direction: column;
+                align-items: center;
+                padding: 40px 20px;
+            }
+
+            .plants-lover-image-container {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .plants-lover-image {
+                margin: 0 auto;
+                width: 100%;
+                max-width: 300px;
+                display: block;
+            }
+
+            .trusted-badge {
+                display: none;
+            }
+
+            .plants-lover-content {
+                text-align: center;
+            }
+
+            /* 5. Deal Section - one card per row, stacked */
+            .deals-wrapper {
+                flex-direction: column;
+                gap: 20px;
+                padding: 0 10px;
+            }
+
+            .left-column {
+                width: 100%;
+                flex-direction: column;
+            }
+
+            .deal-card.small-card,
+            .deal-card.large-card {
+                width: 100%;
+                height: auto;
+            }
+
+            /* 6. Join Section - no change (same for PC and mobile) */
+            .join-section {
+                padding: 60px 20px;
+            }
+
+            .join-section h2 {
+                font-size: 2em;
+            }
+
+            .join-form {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .join-form input[type="email"],
+            .join-form button {
+                width: 100%;
+            }
+
+            /* 7. Footer Section - stacked layout */
             .footer {
                 flex-direction: column;
                 align-items: center;
                 text-align: center;
-                padding: 30px 20px;
+                padding: 40px 20px;
             }
 
-            .footer-left {
-                margin-bottom: 30px;
+            .footer-left,
+            .footer-center,
+            .footer-social {
+                margin-bottom: 20px;
             }
 
-            .footer-menu {
+            .footer-center {
                 flex-direction: column;
                 gap: 20px;
-                margin-bottom: 30px;
-            }
-
-            .footer-menu ul {
-                margin-bottom: 10px;
             }
 
             .footer-social {
+                flex-direction: row;
                 justify-content: center;
-                width: 100%;
             }
         }
     </style>
@@ -906,12 +885,6 @@
 
 
 
-    <script>
-        document.querySelector('.navbar-toggle').addEventListener('click', () => {
-            const navbarMenu = document.querySelector('.navbar-menu');
-            navbarMenu.classList.toggle('active');
-        });
-    </script>
 </body>
 
 </html>
