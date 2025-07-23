@@ -41,117 +41,110 @@
         }
 
         /* 1. Navbar */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f7f9ff;
+        }
+
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 50px;
-            background-color: #fff;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            padding: 16px 24px;
+            background-color: #f7f9ff;
         }
 
-        .navbar-brand .logo {
-            height: 40px;
-            /* Adjust as needed */
-        }
-
-        .navbar-menu {
-            list-style: none;
-            display: flex;
-            margin: 0;
-            padding: 0;
-        }
-
-        .navbar-menu li {
-            margin-left: 30px;
-        }
-
-        .navbar-menu a {
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
-
-        .navbar-menu a:hover {
-            color: #ff6347;
-        }
-
-        .navbar-cart {
+        /* Left - Logo */
+        .logo {
             display: flex;
             align-items: center;
         }
 
-        .navbar-cart i {
-            margin-right: 10px;
-            font-size: 1.2em;
+        .logo img {
+            height: 40px;
+            margin-right: 8px;
         }
 
-        .navbar-cart span {
-            font-weight: bold;
+        .logo .text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
         }
 
-        .navbar-toggle {
-            display: none;
-            /* Hidden on desktop */
-            font-size: 1.5em;
-            cursor: pointer;
+        .brand {
+            color: #c26565;
+            font-size: 20px;
+            font-weight: 600;
         }
 
-        /* Mobile Responsiveness for Navbar */
-        @media (max-width: 768px) {
-            .navbar {
-                padding: 15px 20px;
-            }
+        .subtitle {
+            font-size: 10px;
+            color: #c26565;
+            letter-spacing: 2px;
+        }
 
-            .navbar-menu {
+        /* Center - Nav links */
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 14px;
+
+        }
+
+        .nav-right {
+            flex: 1;
+            display: flex;
+            justify-content: right;
+
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #888;
+            font-weight: 500;
+            font-size: 14px;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: black;
+        }
+
+        .nav-links .active {
+            font-weight: 700;
+            color: black;
+        }
+
+        /* Right - Cart */
+        .cart {
+            display: flex;
+            align-items: right;
+            gap: 6px;
+        }
+
+        .cart-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        .cart span {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        /* Responsive - Mobile */
+        @media screen and (max-width: 768px) {
+            .nav-right {
                 display: none;
-                /* Hide menu items by default */
-                flex-direction: column;
-                width: 100%;
-                position: absolute;
-                top: 70px;
-                /* Adjust based on navbar height */
-                left: 0;
-                background-color: #fff;
-                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-                padding: 20px 0;
-                align-items: center;
-            }
-
-            .navbar-menu.active {
-                display: flex;
-                /* Show when active */
-            }
-
-            .navbar-menu li {
-                margin: 10px 0;
-            }
-
-            .navbar-cart span {
-                display: none;
-                /* Hide cart text for cleaner mobile */
-            }
-
-            .navbar-toggle {
-                display: block;
-                /* Show hamburger icon */
-            }
-
-            .navbar-cart {
-                order: 2;
-                /* Move cart to the right */
-            }
-
-            .navbar-brand {
-                order: 1;
-                /* Keep logo on the left */
             }
         }
-
 
         /* 2. Banner */
         .banner {
@@ -306,38 +299,42 @@
         /* 4. Plants Lover Section */
         .plants-lover-section {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             padding: 80px 50px;
             background-color: #f9f9f9;
             gap: 50px;
+            position: right;
+            flex-wrap: wrap;
         }
 
         .plants-lover-image-container {
             flex: 1;
             position: relative;
-            text-align: center;
         }
 
         .plants-lover-image {
-            max-width: 100%;
-            height: auto;
+            width: 50%;
+            height: 100%;
             border-radius: 10px;
+            margin-left: 450px;
+            margin-top: -30px
         }
 
+        /* Final badge positioning and appearance */
         .trusted-badge {
             position: absolute;
-            top: 0;
-            /* Adjust position as per Figma */
-            right: 0;
-            /* Adjust position as per Figma */
-            transform: translate(20%, -20%);
-            /* Fine-tune position */
+            top: -100px;
+            left: 100%;
+            transform: translateX(-50%);
+            z-index: 10;
         }
 
         .trusted-badge img {
-            width: 100px;
-            /* Adjust size as needed */
-            height: auto;
+            width: 130px;
+            height: 300;
+            border-radius: 800%;
+
+
         }
 
         .plants-lover-content {
@@ -361,13 +358,11 @@
             color: #555;
             position: relative;
             padding-left: 25px;
-            /* Space for custom bullet */
         }
 
         .plants-lover-content ul li::before {
-            content: '\2713';
-            /* Checkmark icon */
-            color: #ff6347;
+            content: '•';
+            color: #555;
             font-weight: bold;
             position: absolute;
             left: 0;
@@ -403,30 +398,49 @@
         /* Latest Deal Section */
         .latest-deals-section {
             padding: 80px 50px;
-            background-color: #fff;
+            background-color: #f7f9fc;
             text-align: center;
+            font-family: 'Segoe UI', sans-serif;
         }
 
-        .deals-grid {
+        .section-header h2 {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .section-header .highlight {
+            color: #ff6a00;
+        }
+
+        .section-header p {
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+            color: #666;
+            font-size: 1em;
+            line-height: 1.6;
+        }
+
+        .deals-wrapper {
             display: flex;
+            gap: 20px;
             justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            /* Allow cards to wrap */
+            align-items: stretch;
             max-width: 1200px;
             margin: 0 auto;
+        }
+
+        .left-column {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
         }
 
         .deal-card {
             position: relative;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .deal-card:hover {
-            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
 
         .deal-card img {
@@ -438,16 +452,12 @@
 
         .deal-card.small-card {
             width: 300px;
-            /* Adjust size */
             height: 200px;
-            /* Adjust size */
         }
 
         .deal-card.large-card {
             width: 450px;
-            /* Adjust size */
             height: 420px;
-            /* Adjust size */
         }
 
         .deal-overlay {
@@ -456,40 +466,42 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.45);
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             color: #fff;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .deal-card:hover .deal-overlay {
             opacity: 1;
+            transition: opacity 0.3s ease;
+            padding: 20px;
+            text-align: center;
         }
 
         .deal-overlay p {
-            font-size: 1.5em;
+            font-size: 1.4em;
+            font-weight: 700;
             margin-bottom: 15px;
-            font-weight: bold;
+            line-height: 1.4;
         }
 
         .deal-overlay button {
-            background-color: #ff6347;
-            color: #fff;
+            background-color: #fff;
+            color: #000;
             border: none;
             padding: 10px 25px;
-            border-radius: 5px;
+            border-radius: 3px;
+            font-size: 1em;
             cursor: pointer;
-            font-size: 1.1em;
+            font-weight: 600;
+            text-transform: uppercase;
             transition: background-color 0.3s ease;
         }
 
         .deal-overlay button:hover {
-            background-color: #e0523a;
+            background-color: #e0e0e0;
         }
+
 
         /* Mobile Responsiveness for Latest Deal Section */
         @media (max-width: 768px) {
@@ -518,7 +530,7 @@
 
         /* 5. Join Section */
         .join-section {
-            background-image: url('./assets/join-banner.png');
+            background-image: url('assets/news-letter-bg.png');
             /* Replace with your image */
             background-size: cover;
             background-position: center;
@@ -693,22 +705,39 @@
 <body>
 
     <nav class="navbar">
-        <div class="navbar-brand">
-            <img src="./assets/logo.png" alt="Logo" class="logo">
+        <!-- Logo -->
+        <div class="logo">
+            <img src="assets/logo.png" alt="Logo">
+            <div class="text">
+                <span class="brand">faugei</span>
+                <span class="subtitle">FLOWER SHOP</span>
+            </div>
         </div>
-        <ul class="navbar-menu">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Shop</a></li>
-            <li><a href="#">About us</a></li>
-        </ul>
-        <div class="navbar-cart">
-            <i class="fas fa-shopping-cart"></i>
-            <span>Cart ($50)</span>
-        </div>
-        <div class="navbar-toggle">
-            <i class="fas fa-bars"></i>
+
+        <!-- Center Navigation -->
+        <div class="nav-container">
+
+
+            <div class="nav-right">
+                <div class="nav-links">
+                    <a href="#" class="active">Home</a>
+                    <a href="#">Shop</a>
+                    <a href="#">About us</a>
+                </div>
+            </div>
+
+            <!-- Cart -->
+            <div class="cart">
+                <svg class="cart-icon" fill="none" stroke="black" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 9m13-9l2 9M9 21a1 1 0 100-2 1 1 0 000 2zm8 0a1 1 0 100-2 1 1 0 000 2z" />
+                </svg>
+                <span>Cart ($56)</span>
+            </div>
         </div>
     </nav>
+
+
 
     <section class="banner">
         <div class="banner-content">
@@ -717,7 +746,7 @@
                 blooms, we offer a wide variety of fresh flowers that are perfect for any occasion.</p>
         </div>
         <div class="banner-image">
-            <img src="./assets/banner-flower.png" alt="Fresh Flowers">
+            <img src="assets/hero-flower.png" alt="Fresh Flowers">
         </div>
     </section>
 
@@ -729,49 +758,49 @@
         </div>
         <div class="plants-grid">
             <div class="plant-card">
-                <img src="./assets/plant1.png" alt="Lily Blossom">
+                <img src="assets/sample-flower-image.png" alt="Lily Blossom">
                 <h3>Lily Blossom</h3>
                 <p>20 USD</p>
                 <button class="add-to-cart">ADD TO CART</button>
             </div>
             <div class="plant-card">
-                <img src="./assets/plant2.png" alt="Lily Blossom">
+                <img src="assets/sample-flower-image.png" alt="Lily Blossom">
                 <h3>Lily Blossom</h3>
                 <p>20 USD</p>
                 <button class="add-to-cart">ADD TO CART</button>
             </div>
             <div class="plant-card">
-                <img src="./assets/plant3.png" alt="Lily Blossom">
+                <img src="assets/sample-flower-image.png" alt="Lily Blossom">
                 <h3>Lily Blossom</h3>
                 <p>20 USD</p>
                 <button class="add-to-cart">ADD TO CART</button>
             </div>
             <div class="plant-card">
-                <img src="./assets/plant4.png" alt="Lily Blossom">
+                <img src="assets/sample-flower-image.png" alt="Lily Blossom">
                 <h3>Lily Blossom</h3>
                 <p>20 USD</p>
                 <button class="add-to-cart">ADD to Cart</button>
             </div>
             <div class="plant-card">
-                <img src="./assets/plant5.png" alt="Lily Blossom">
+                <img src="assets/sample-flower-image.png" alt="Lily Blossom">
                 <h3>Lily Blossom</h3>
                 <p>20 USD</p>
                 <button class="add-to-cart">ADD TO CART</button>
             </div>
             <div class="plant-card">
-                <img src="./assets/plant6.png" alt="Lily Blossom">
+                <img src="assets/sample-flower-image.png" alt="Lily Blossom">
                 <h3>Lily Blossom</h3>
                 <p>20 USD</p>
                 <button class="add-to-cart">ADD TO CART</button>
             </div>
             <div class="plant-card">
-                <img src="./assets/plant7.png" alt="Lily Blossom">
+                <img src="assets/sample-flower-image.png" alt="Lily Blossom">
                 <h3>Lily Blossom</h3>
                 <p>20 USD</p>
                 <button class="add-to-cart">ADD TO CART</button>
             </div>
             <div class="plant-card">
-                <img src="./assets/plant8.png" alt="Lily Blossom">
+                <img src="assets/sample-flower-image.png" alt="Lily Blossom">
                 <h3>Lily Blossom</h3>
                 <p>20 USD</p>
                 <button class="add-to-cart">ADD TO CART</button>
@@ -781,11 +810,14 @@
 
     <section class="plants-lover-section">
         <div class="plants-lover-image-container">
-            <img src="./assets/plant-lover.png" alt="Flower & Plants Lover" class="plants-lover-image">
+            <img src="assets/flower-store.png" alt="Flower & Plants Lover" class="plants-lover-image">
+
+            <!-- Badge moved here to overlay the top-center -->
             <div class="trusted-badge">
-                <img src="./assets/trusted-badge.png" alt="Trusted Badge">
+                <img src="assets/trusted-badge.png" alt="Trusted Badge">
             </div>
         </div>
+
         <div class="plants-lover-content">
             <h2>Flower & Plants Lover</h2>
             <ul>
@@ -799,31 +831,35 @@
         </div>
     </section>
 
+
+
     <section class="latest-deals-section">
         <div class="section-header">
-            <h2>Latest <span class="highlight">Deals</span></h2>
+            <h2><span class="highlight">Latest</span> Deals</h2>
             <p>Indulge your senses with the beauty and fragrance of our fresh flower shop. From classic roses to exotic
                 blooms, we offer a wide variety of fresh.</p>
         </div>
-        <div class="deals-grid">
-            <div class="deal-card small-card">
-                <img src="./assets/deal1.png" alt="Bloom Plant">
-                <div class="deal-overlay">
-                    <p>60% Off | Bloom Plant</p>
-                    <button>Shop Now</button>
+        <div class="deals-wrapper">
+            <div class="left-column">
+                <div class="deal-card small-card">
+                    <img src="assets/deal-bloom.png" alt="Bloom Plant">
+                    <div class="deal-overlay">
+                        <p>60% Off | Bloom Plant</p>
+                        <button>Shop Now</button>
+                    </div>
+                </div>
+                <div class="deal-card small-card">
+                    <img src="assets/deal-ana.png" alt="Ana Plant">
+                    <div class="deal-overlay">
+                        <p>30% Off | Ana Plant</p>
+                        <button>Shop Now</button>
+                    </div>
                 </div>
             </div>
             <div class="deal-card large-card">
-                <img src="./assets/deal2.png" alt="Zabo Plant">
+                <img src="assets/deal-zabo.png" alt="Zabo Plant">
                 <div class="deal-overlay">
                     <p>25% Off | Zabo Plant</p>
-                    <button>Shop Now</button>
-                </div>
-            </div>
-            <div class="deal-card small-card">
-                <img src="./assets/deal3.png" alt="Tulip Plant">
-                <div class="deal-overlay">
-                    <p>30% Off | Tulip Plant</p>
                     <button>Shop Now</button>
                 </div>
             </div>
@@ -840,7 +876,7 @@
 
     <footer class="footer">
         <div class="footer-left">
-            <img src="./assets/logo.png" alt="Logo" class="footer-logo">
+            <img src="/assets/logo.png" alt="Logo" class="footer-logo">
             <p>Indulge your senses with the beauty and fragrance of our fresh flower shop.</p>
         </div>
         <div class="footer-menu">
