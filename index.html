@@ -621,19 +621,20 @@
 
             .deals-wrapper {
                 flex-direction: column;
-                gap: 20px;
-                padding: 0 10px;
-            }
-
-            .left-column {
-                width: 100%;
-                flex-direction: column;
+                align-items: center;
             }
 
             .deal-card.small-card,
             .deal-card.large-card {
+                width: 100% !important;
+                height: auto !important;
+                aspect-ratio: 16 / 9;
+
+            }
+
+            .left-column {
                 width: 100%;
-                height: auto;
+                gap: 20px;
             }
 
             .join-section {
