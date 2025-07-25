@@ -579,6 +579,91 @@
             transform: scale(1.1);
         }
 
+        .broken-badge {
+            display: none;
+            position: absolute;
+            width: 100%;
+            height: auto;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 1s ease, transform 1s ease;
+            animation: shakeBadge 0.8s infinite;
+        }
+
+        .broken-left {
+            transform: translateX(-5px);
+        }
+
+        .broken-right {
+            transform: translateX(5px);
+        }
+
+        @keyframes shakeLeft {
+
+            0%,
+            100% {
+                transform: translateX(-25px) rotate(-8deg);
+            }
+
+            25% {
+                transform: translateX(-27px) rotate(-9deg);
+            }
+
+            50% {
+                transform: translateX(-23px) rotate(-7deg);
+            }
+
+            75% {
+                transform: translateX(-26px) rotate(-8.5deg);
+            }
+        }
+
+
+        @keyframes shakeRight {
+
+            0%,
+            100% {
+                transform: translateX(40px) rotate(6deg);
+            }
+
+            25% {
+                transform: translateX(42px) rotate(7deg);
+            }
+
+            50% {
+                transform: translateX(38px) rotate(5deg);
+            }
+
+            75% {
+                transform: translateX(41px) rotate(6.5deg);
+            }
+        }
+
+        @media (max-resolution: 90dpi),
+        (min-resolution: 150dpi) {
+
+            .top-layer,
+            .shadow-layer {
+                display: none;
+            }
+
+            .broken-badge {
+                display: block;
+                opacity: 1;
+                transition: opacity 0.5s ease;
+            }
+
+            .broken-left {
+                animation: shakeLeft 1s infinite ease-in-out;
+
+            }
+
+            .broken-right {
+                animation: shakeRight 1s infinite ease-in-out;
+            }
+        }
+
         @keyframes rotateBadge {
             from {
                 transform: rotate(0deg);
@@ -858,6 +943,8 @@
             <div class="badge-container">
                 <img src="assets/trusted-badge.png" class="trusted-badge shadow-layer" alt="Shadow Badge">
                 <img src="assets/trusted-badge.png" class="trusted-badge top-layer" />
+                <img src="assets/broken-left.png" class="trusted-badge broken-badge broken-left" alt="Broken Left" />
+                <img src="assets/broken-right.png" class="trusted-badge broken-badge broken-right" alt="Broken Right" />
             </div>
         </div>
         <div class="plants-lover-content">
